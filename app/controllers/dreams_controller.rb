@@ -1,4 +1,4 @@
-class DreamController < ApplicationController
+class DreamsController < ApplicationController
   def add
   end
 

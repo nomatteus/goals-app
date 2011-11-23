@@ -1,8 +1,9 @@
-class GoalController < ApplicationController
+class GoalsController < ApplicationController
   def add
   end
 
   def index
+    @goals = Goal.all
   end
 
   def edit

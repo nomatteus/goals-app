@@ -1,24 +1,8 @@
 App::Application.routes.draw do
-  get "dream/add"
 
-  get "dream/index"
-
-  get "dream/edit"
-
-  get "dream/delete"
-
-  get "dream/show"
-
-  get "goal/add"
-
-  get "goal/index"
-
-  get "goal/edit"
-
-  get "goal/delete"
-
-  get "goal/show"
-
+  resources :goals
+  resources :dreams
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -68,7 +52,7 @@ App::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'goal#index'
+  root :to => 'goals#index'
 
   # See how all your routes lay out with "rake routes"
 

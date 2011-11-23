@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GoalControllerTest < ActionController::TestCase
+class GoalsControllerTest < ActionController::TestCase
   test "should get add" do
     get :add
     assert_response :success

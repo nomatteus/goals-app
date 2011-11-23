@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DreamControllerTest < ActionController::TestCase
+class DreamsControllerTest < ActionController::TestCase
   test "should get add" do
     get :add
     assert_response :success

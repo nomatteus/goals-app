@@ -23,6 +23,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+# https://github.com/codebrew/backbone-rails (yes, the repo & gem names are reversed)
+gem 'rails-backbone'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
