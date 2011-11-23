@@ -1,4 +1,24 @@
 App::Application.routes.draw do
+  get "dream/add"
+
+  get "dream/index"
+
+  get "dream/edit"
+
+  get "dream/delete"
+
+  get "dream/show"
+
+  get "goal/add"
+
+  get "goal/index"
+
+  get "goal/edit"
+
+  get "goal/delete"
+
+  get "goal/show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -6,6 +6,9 @@ gem 'rails', '3.1.1'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+
+# Use Twitter Bootstrap
+# https://github.com/thomas-mcdonald/bootstrap-sass
 gem 'bootstrap-sass', '1.4.0'
 
 gem 'execjs'
