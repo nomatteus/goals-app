@@ -10,6 +10,7 @@
 @import "bootstrap/variables";
 
 // overwrite variables here
+// ...
 
 @import "bootstrap/mixins";
 
@@ -21,3 +22,6 @@
 @import "bootstrap/patterns";
 
 // rest of your manifest
+@import "global";
+@import "goals";
+@import "dreams";
