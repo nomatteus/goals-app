@@ -3,10 +3,3 @@
 
 <div id="goals"></div>
 
-<script type="text/javascript">
-  $(function() {
-    // Blog is the app name
-    window.router = new App.Routers.GoalsRouter({goals: <%= @goals.to_json.html_safe -%>});
-    Backbone.history.start();
-  });
-</script>
