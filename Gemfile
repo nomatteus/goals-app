@@ -14,7 +14,9 @@ gem 'bootstrap-sass', '1.4.0'
 gem 'execjs'
 gem 'therubyracer'
 
-gem 'devise'
+# Fixing devise at 1.5.0, as 1.5.1 had errors. 
+# Wait a while before upgrading, and test test test when doing so!!
+gem 'devise', '1.5.0'
 
 # Gems used only for assets and not required
 # in production environments by default.
