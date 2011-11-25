@@ -1,3 +1,39 @@
 // Place all the styles related to the Goal controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// MOVE THESE vars to the global file, later
+$color_1: #000;
+
+#goals-index {
+  .goal-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li.goal {
+      float: left;  
+      border: 2px solid #ccc;
+      background-color: #fff;
+      margin: 25px 0;
+      padding: 10px;
+      // Index Card Size & Because Golden Ratio http://goo.gl/w05lU
+      width: 272px;
+      height: 168px;
+      -webkit-border-radius: 6px; 
+         -moz-border-radius: 6px; 
+              border-radius: 6px;
+      -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+      -webkit-box-shadow: 5px 5px 15px #ccc; 
+         -moz-box-shadow: 5px 5px 15px #ccc; 
+              box-shadow: 5px 5px 15px #ccc; 
+      .title {
+        font-size: 22px;
+        margin-top: 74px;
+        text-align: center
+      }
+    }
+    li.goal:nth-child(3n+2) {
+      margin: 25px;
+    }
+  }
+}

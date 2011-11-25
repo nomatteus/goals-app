@@ -1,5 +1,5 @@
 class DreamsController < ApplicationController
-  def add
+  def new
   end
 
   def index
@@ -8,7 +8,7 @@ class DreamsController < ApplicationController
   def edit
   end
 
-  def delete
+  def destroy
   end
 
   def show

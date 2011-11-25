@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class DreamsControllerTest < ActionController::TestCase
-  test "should get add" do
-    get :add
+=begin
+  test "should get new" do
+    get :new
     assert_response :success
   end
 
@@ -16,14 +17,15 @@ class DreamsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get delete" do
-    get :delete
+  test "should get destroy" do
+    get :destroy
     assert_response :success
   end
 
   test "should get show" do
-    get :show
+    get :show, :id => 1
     assert_response :success
   end
+=end
 
 end

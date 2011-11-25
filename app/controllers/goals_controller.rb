@@ -1,17 +1,19 @@
 class GoalsController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
 
-  def add
+  def new
   end
 
   def index
-    @goals = Goal.all
+    @goals_focused = Goal.where(:state => "focused")
+    @goals_active  = Goal.where(:state => "active")
+    @goals_someday = Goal.where(:state => "someday")
   end
 
   def edit
   end
 
-  def delete
+  def destroy
   end
 
   def show

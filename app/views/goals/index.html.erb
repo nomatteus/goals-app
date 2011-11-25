@@ -4,7 +4,39 @@
   </div>
   <div class="row">
     <div class="span16">
-      <h2>Main content</h2>
+      <h2>Focused</h2>
+      <ul id="goals-focused" class="goal-list clearfix">
+      <% @goals_focused.each do |goal| %>
+        <li class="goal">
+          <div class="title"><%= goal.title %></div>
+          <% goal.order %>
+          <% goal.state %>
+        </li>
+      <% end %>
+      </ul>
+
+      <h2>Active/Maintaining</h2>
+      <ul id="goals-active" class="goal-list clearfix">
+      <% @goals_active.each do |goal| %>
+        <li class="goal">
+          <div class="title"><%= goal.title %></div>
+          <% goal.order %>
+          <% goal.state %>
+        </li>
+      <% end %>
+      </ul>
+      
+      <h2>Someday</h2>
+
+      <ul id="goals-someday" class="goal-list clearfix">
+      <% @goals_someday.each do |goal| %>
+        <li class="goal">
+          <div class="title"><%= goal.title %></div>
+          <% goal.order %>
+          <% goal.state %>
+        </li>
+      <% end %>
+      </ul>
     </div>
     <!-- <div class="span4">
       <h3>Secondary content</h3>
@@ -12,6 +44,4 @@
   </div>
 </div>
 
-
-<div id="goals"></div>
 
