@@ -1,2 +1,26 @@
-<h1>Dream#index</h1>
-<p>Find me in app/views/dream/index.html.erb</p>
+<div class="content">
+  <div class="page-header">
+    <h1>Dreamlist <small>Describe the ideal you.</small></h1>
+  </div>
+  <div class="row">
+    <div class="span16">
+      <h2></h2>
+      <% @dreams_by_group.each do |g| %>
+        <div class="dream-group span7 <%= cycle("odd", "even") %>">
+          <h3><%= g[:group].capitalize %></h3>
+          <ul>
+            <li class="add-new">Add New: `<input type="text"></li>
+            <% g[:dreams].each do |d| %>
+              <li><%= d.title %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+    <!-- <div class="span4">
+      <h3>Secondary content</h3>
+    </div> -->
+  </div>
+</div>
+
+
