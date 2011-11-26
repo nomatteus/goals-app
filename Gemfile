@@ -18,6 +18,9 @@ gem 'therubyracer'
 # Wait a while before upgrading, and test test test when doing so!!
 gem 'devise', '1.5.0'
 
+gem 'formtastic'
+gem 'formtastic-bootstrap'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

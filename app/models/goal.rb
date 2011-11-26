@@ -1,11 +1,18 @@
 class Goal < ActiveRecord::Base
-  validates_inclusion_of :state, :in => [:focused, :active, :someday]
 
-  def state
+  def self.valid_states
+    [:focused, :active, :someday]
+  end
+
+  #validates_inclusion_of :state, :in => @valid_states
+=begin
+def state
     read_attribute(:state).to_sym
   end
 
   def state= (value)
     write_attribute(:state, value.to_s)
   end
+=end
+
 end
