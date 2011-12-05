@@ -1,6 +1,6 @@
 <div class="content">
   <div class="page-header">
-    <h1>Goal#index <small>Find me in app/views/goal/index.html.erb</small></h1>
+    <h1>Goals <small>What's your focus?</small></h1>
   </div>
   <div class="row">
     <div class="span16">
@@ -9,6 +9,7 @@
       <% @goals_focused.each do |goal| %>
         <li class="goal">
           <div class="title"><%= goal.title %></div>
+          <%= goal.completion_target %>
           <% goal.order %>
           <% goal.state %>
         </li>
@@ -20,6 +21,7 @@
       <% @goals_active.each do |goal| %>
         <li class="goal">
           <div class="title"><%= goal.title %></div>
+          <%= goal.completion_target %>
           <% goal.order %>
           <% goal.state %>
         </li>
@@ -32,12 +34,15 @@
       <% @goals_someday.each do |goal| %>
         <li class="goal">
           <div class="title"><%= goal.title %></div>
+          <%= goal.completion_target %>
           <% goal.order %>
           <% goal.state %>
         </li>
       <% end %>
       </ul>
     </div>
+
+    <%= link_to "Add new goal", :action => "new"  %>
     <!-- <div class="span4">
       <h3>Secondary content</h3>
     </div> -->
