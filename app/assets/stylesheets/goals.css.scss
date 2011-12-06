@@ -14,7 +14,7 @@ $color_1: #000;
       float: left;  
       border: 2px solid #ccc;
       background-color: #fff;
-      margin: 25px 0;
+      margin: 25px 17px 25px 0;
       padding: 10px;
       // Index Card Size & Because Golden Ratio http://goo.gl/w05lU
       width: 272px;
@@ -33,7 +33,18 @@ $color_1: #000;
       }
     }
     li.goal:nth-child(3n+2) {
-      margin: 25px;
+      // Using n-th child messes up sortable. 
+      //margin: 25px;
+    }
+    // For Sorting
+    li.goal-highlight {
+      background-color: #ccc;
+      border-color: #ccc;
+    }
+    li.ui-sortable-helper {
+      border-style: dashed;
+      border-color: rgba(0, 0, 0, 0.4);
+      opacity: 0.7;
     }
   }
 }

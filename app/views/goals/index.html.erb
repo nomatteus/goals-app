@@ -7,24 +7,14 @@
       <h2>Focused</h2>
       <ul id="goals-focused" class="goal-list clearfix">
       <% @goals_focused.each do |goal| %>
-        <li class="goal">
-          <div class="title"><%= goal.title %></div>
-          <%= goal.completion_target %>
-          <% goal.order %>
-          <% goal.state %>
-        </li>
+        <%= render :partial => "card", :locals => { :goal => goal } %>
       <% end %>
       </ul>
 
       <h2>Active/Maintaining</h2>
       <ul id="goals-active" class="goal-list clearfix">
       <% @goals_active.each do |goal| %>
-        <li class="goal">
-          <div class="title"><%= goal.title %></div>
-          <%= goal.completion_target %>
-          <% goal.order %>
-          <% goal.state %>
-        </li>
+        <%= render :partial => "card", :locals => { :goal => goal } %>
       <% end %>
       </ul>
       
@@ -32,12 +22,7 @@
 
       <ul id="goals-someday" class="goal-list clearfix">
       <% @goals_someday.each do |goal| %>
-        <li class="goal">
-          <div class="title"><%= goal.title %></div>
-          <%= goal.completion_target %>
-          <% goal.order %>
-          <% goal.state %>
-        </li>
+        <%= render :partial => "card", :locals => { :goal => goal } %>
       <% end %>
       </ul>
     </div>
@@ -48,5 +33,3 @@
     </div> -->
   </div>
 </div>
-
-

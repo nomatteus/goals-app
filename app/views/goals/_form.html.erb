@@ -1,0 +1,10 @@
+
+<%= semantic_form_for @goal do |f| %>
+  <%= f.semantic_errors %>
+  I will... <%= f.input :title, :hint => "blah blah blah!", :input_html => { :class => "xlarge" } %>
+  By <%= f.input :completion_target, :as => :string, :hint => "YYYY-MM-DD", :input_html => { :class => "datepicker" } %>
+  <%= f.input :state, :as => :radio, :collection => Goal.valid_states %>
+  <%= f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

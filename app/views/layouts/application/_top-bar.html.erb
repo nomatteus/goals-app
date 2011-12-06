@@ -1,27 +1,30 @@
 <div class="topbar">
   <div class="fill">
     <div class="container">
-      <a class="brand" href="#">Goals</a>
+      <a class="brand" href="/">GoalPaper</a>
       <ul class="nav">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <% if user_signed_in? %>
-          <% #if current_user.admin? %>
-            <%#= link_to "Admin", admin_path %>
-          <% #end %>
-          <li><%= link_to "Sign out", destroy_user_session_path %></li>
-          <li><%= link_to "Settings", edit_user_registration_path %></li>
-        <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path %></li>
-          <li><%= link_to "Sign in", new_user_session_path %></li>
-        <% end -%>
+        <li><%= link_to "Goals", goals_path %></li>
+        <li><%= link_to "Dreams", dreams_path %></li>
       </ul>
-      <form action="" class="pull-right">
-        <input class="input-small" type="text" placeholder="Username">
-        <input class="input-small" type="password" placeholder="Password">
-        <button class="btn" type="submit">Sign in</button>
-      </form>
+      <div class="pull-right">
+        <ul class="nav">
+          <% if user_signed_in? %>
+            <% #if current_user.admin? %>
+              <%#= link_to "Admin", admin_path %>
+            <% #end %>
+            <li><%= link_to "Settings", edit_user_registration_path %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path , :class => "pull-right"%></li>
+            <form action="" class="pull-right">
+              <input class="input-small" type="text" placeholder="Username">
+              <input class="input-small" type="password" placeholder="Password">
+              <button class="btn" type="submit">Sign in</button>
+            </form>
+            <!--<li><%= link_to "Sign in", new_user_session_path %></li>-->
+          <% end -%>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

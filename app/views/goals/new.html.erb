@@ -5,15 +5,7 @@
   <div class="row">
     <div class="span16">
       <h2></h2>
-      <%= semantic_form_for Goal.new do |f| %>
-        <%= f.semantic_errors %>
-        I will... <%= f.input :title, :hint => "blah blah blah!" %>
-        By <%= f.input :completion_target, :as => :string, :hint => "YYYY-MM-DD" %>
-        <%= f.input :state, :as => :select, :collection => Goal.valid_states %>
-        <%= f.buttons do %>
-          <%= f.commit_button %>
-        <% end %>
-      <% end %>
+      <%= render :partial => "form" %>
 
     </div>
     <!-- <div class="span4">

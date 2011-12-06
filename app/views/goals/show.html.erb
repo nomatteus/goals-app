@@ -1,2 +1,6 @@
 <h1>Goal#show</h1>
 <p>Find me in app/views/goal/show.html.erb</p>
+
+<ul id="goals-single" class="goal-list clearfix">
+  <%= render :partial => "card", :locals => { :goal => @goal } %>
+</ul>
