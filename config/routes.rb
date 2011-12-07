@@ -4,6 +4,8 @@ App::Application.routes.draw do
 
   resources :goals
   resources :dreams
+
+  match 'goals/update_order' => 'goals#update_order'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

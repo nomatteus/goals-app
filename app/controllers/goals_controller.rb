@@ -6,9 +6,9 @@ class GoalsController < ApplicationController
   end
 
   def index
-    @goals_focused = Goal.where(:state => "focused")
-    @goals_active  = Goal.where(:state => "active")
-    @goals_someday = Goal.where(:state => "someday")
+    @goals_focused = Goal.where(:state => "focused").order("`order`")
+    @goals_active  = Goal.where(:state => "active").order("`order`")
+    @goals_someday = Goal.where(:state => "someday").order("`order`")
   end
 
   def edit
@@ -42,6 +42,19 @@ class GoalsController < ApplicationController
       else
         format.html { render :action => "new" }
       end
+    end
+  end
+
+  def update_order
+    goals = params[:goals]
+    respond_to do |format|
+      format.js {
+        if Goal.update_goal_order goals
+          render :nothing => true, :status => 200
+        else
+          render :nothing => true, :status => 500
+        end
+      }
     end
   end
 

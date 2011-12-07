@@ -15,4 +15,19 @@ $ ->
   
   $(".goal-list").sortable
     placeholder: "goal goal-highlight"
+    update: ->
+      goals = $(this).sortable("toArray")
+      $.each goals, (i, val) ->
+        goals[i] = parseInt(goals[i].replace(/goal-/, ""))
+      url = "/goals/update_order"
+      $.ajax
+        beforeSend: (request) ->
+          request.setRequestHeader "Accept", "text/javascript"
+        success: (response) -> 
+          console.log goals
+          console.log "order Updated!"
+          true
+        type: "POST"
+        data: {goals: goals}
+        url: url
   $(".goal-list").disableSelection()
