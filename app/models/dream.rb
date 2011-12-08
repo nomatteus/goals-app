@@ -1,5 +1,9 @@
 class Dream < ActiveRecord::Base
 
+  attr_accessible :title, :order, :group
+
+  belongs_to :user
+
   def self.groups
     Dream.select("DISTINCT(`group`)")
   end

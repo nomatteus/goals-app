@@ -16,7 +16,14 @@ gem 'therubyracer'
 
 # Fixing devise at 1.5.0, as 1.5.1 had errors. 
 # Wait a while before upgrading, and test test test when doing so!!
-gem 'devise', '1.5.0'
+# UPDATE: Dec. 7, 2011 -- Looks like 1.5.2 is now working...
+gem 'devise', '~> 1.5.0'
+
+# Mailchimp Devise integration
+# https://github.com/jcnnghm/devise_mailchimp
+# http://jcnnghm.github.com/devise_mailchimp/
+# TODO: This currently depends on devise ~> 1.4.8 but we need to use 1.5.0
+#gem 'devise_mailchimp'
 
 gem 'formtastic'
 gem 'formtastic-bootstrap'

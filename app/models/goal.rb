@@ -1,20 +1,19 @@
 class Goal < ActiveRecord::Base
 
+  attr_accessible :title, :order, :state, :completion_target
+
+  belongs_to :user
+
   def self.valid_states
     [:focused, :active, :someday]
   end
 
-  def self.update_goal_order goals
-    goals.each_with_index do |goal_id, i| 
-      if is_owner? goal_id
-        g = Goal.find(goal_id).update_attributes({order: i + 1})
-      end
-    end
-  end
-
-  # TO DO: BUILD THIS IN!
-  def self.is_owner? id
-    true
+  # Renamed from is_owner? since we might allow admins to edit
+  def can_edit? user
+    #Rails.logger.info "%%%%%%%%"
+    #Rails.logger.info "Current User id is #{user.id}"
+    #Rails.logger.info "Goal User id is #{self.user_id}"
+    user.id == self.user_id
   end
 
   #validates_inclusion_of :state, :in => @valid_states

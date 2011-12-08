@@ -1,5 +1,5 @@
 class GoalsController < ApplicationController
-  #before_filter :authenticate_user!
+  before_filter :authenticate_user!
 
   def new
     @goal = Goal.new
@@ -49,11 +49,13 @@ class GoalsController < ApplicationController
     goals = params[:goals]
     respond_to do |format|
       format.js {
-        if Goal.update_goal_order goals
-          render :nothing => true, :status => 200
-        else
-          render :nothing => true, :status => 500
+        goals.each_with_index do |goal_id, i| 
+          g = Goal.find(goal_id)
+          if g.can_edit? current_user
+            g.update_attributes({order: i + 1})
+          end
         end
+        render :nothing => true, :status => 200
       }
     end
   end
